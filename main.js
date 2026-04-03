@@ -11,6 +11,7 @@ function initPretextHero() {
   const dpr = window.devicePixelRatio || 1;
 
   const phrases = [
+    'Math enthusiast. Check my YT channel!',
     'Building scalable APIs & cloud systems',
     'Django // FastAPI // AWS // Docker',
     'Fraud detection & financial risk engines',
@@ -83,6 +84,8 @@ function initPretextHero() {
     const text = phrases[currentPhrase];
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*<>{}[]';
     let revealed = 0;
+    let tick = 0;
+    const revealEvery = 3; // reveal 1 char every 3 frames (~50ms per char)
 
     function frame() {
       ctx.clearRect(0, 0, cssWidth, cssHeight);
@@ -119,16 +122,19 @@ function initPretextHero() {
       }
 
       ctx.shadowBlur = 0;
-      revealed += 1;
+      tick++;
+      if (tick % revealEvery === 0) {
+        revealed += 1;
+      }
 
       if (revealed <= text.length) {
         requestAnimationFrame(frame);
       } else {
-        renderPretextLine();
         setTimeout(() => {
+          renderPretextLine();
           currentPhrase = (currentPhrase + 1) % phrases.length;
           scrambleTransition();
-        }, 3000);
+        }, 900); // hold the final text for 5 seconds
       }
     }
 
