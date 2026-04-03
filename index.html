@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhon Edwin Sanz Gonzalez | Software Developer</title>
+  <meta name="description" content="Backend-focused Software Engineer with 7+ years of experience designing and scaling APIs, cloud-based systems, and financial backend platforms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Floating particles background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="cyber-nav">
+    <div class="nav-brand glitch-hover" data-text="JSG">JSG</div>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-glitch-wrapper">
+        <h1 class="hero-name glitch" data-text="Jhon Edwin Sanz Gonzalez">Jhon Edwin Sanz Gonzalez</h1>
+      </div>
+      <div class="hero-title-wrapper">
+        <span class="hero-bracket">[</span>
+        <h2 class="hero-title typewriter">SOFTWARE DEVELOPER</h2>
+        <span class="hero-bracket">]</span>
+      </div>
+      <div class="hero-location">
+        <span class="cyber-dot"></span>
+        Pereira, Colombia
+      </div>
+      <!-- Pretext canvas for dynamic text effect -->
+      <canvas id="pretext-hero" class="pretext-canvas"></canvas>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title" data-text="PROFILE">
+        <span class="section-number">01.</span> PROFILE
+      </h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="cyber-text reveal">
+            Backend-focused Software Engineer with <span class="highlight">7+ years</span> of experience designing and scaling
+            APIs, cloud-based systems, and financial backend platforms. Strong background in
+            <span class="highlight">AWS infrastructure</span>, fraud detection workflows, and distributed architectures using
+            Django and FastAPI.
+          </p>
+          <p class="cyber-text reveal">
+            Experienced in building automation systems and exploring AI-powered applications
+            using <span class="highlight">LLM-based agents</span> (LangChain, LangGraph). Strong mathematical foundation and
+            analytical thinking applied to backend engineering and financial risk systems.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card reveal">
+            <span class="stat-number" data-count="7">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-number" data-count="6">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Companies</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Countries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title" data-text="SKILLS">
+        <span class="section-number">02.</span> SKILLS
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal" data-category="backend">
+          <div class="skill-card-header">
+            <div class="skill-icon">&#9001;/&#9002;</div>
+            <h3>Backend & APIs</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">DRF</span>
+            <span class="skill-tag">FastAPI</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+
+        <div class="skill-card reveal" data-category="cloud">
+          <div class="skill-card-header">
+            <div class="skill-icon">&#9729;</div>
+            <h3>Cloud & DevOps</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS Lambda</span>
+            <span class="skill-tag">EC2</span>
+            <span class="skill-tag">S3</span>
+            <span class="skill-tag">CDK</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Git</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+
+        <div class="skill-card reveal" data-category="db">
+          <div class="skill-card-header">
+            <div class="skill-icon">&#9776;</div>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Neo4j</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+
+        <div class="skill-card reveal" data-category="ai">
+          <div class="skill-card-header">
+            <div class="skill-icon">&#10047;</div>
+            <h3>AI & Automation</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">LangGraph</span>
+            <span class="skill-tag">LLM Agents</span>
+            <span class="skill-tag">Workflow Automation</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+        </div>
+
+        <div class="skill-card reveal" data-category="other">
+          <div class="skill-card-header">
+            <div class="skill-icon">&#8734;</div>
+            <h3>Other</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Math</span>
+            <span class="skill-tag">REST API Design</span>
+            <span class="skill-tag">System Architecture</span>
+            <span class="skill-tag">Risk & Fraud Systems</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title" data-text="EXPERIENCE">
+        <span class="section-number">03.</span> EXPERIENCE
+      </h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">12/2024 &mdash; Present</span>
+              <span class="timeline-location">Medellin</span>
+            </div>
+            <h3 class="timeline-role">Backend Developer</h3>
+            <h4 class="timeline-company">Viamericas</h4>
+            <ul class="timeline-details">
+              <li>Maintain and optimize AWS-based infrastructure supporting financial services applications.</li>
+              <li>Design and implement backend features using Django and AWS Lambda in serverless environments.</li>
+              <li>Contribute to the Financial Risk team by developing backend logic for fraud detection workflows.</li>
+              <li>Support integration of early-stage machine learning models into fraud analysis pipelines.</li>
+              <li>Improve deployment processes through Docker-based containerization strategies.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Django</span>
+              <span class="tag">AWS Lambda</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Fraud Detection</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">03/2024 &mdash; 08/2024</span>
+              <span class="timeline-location">Colombia</span>
+            </div>
+            <h3 class="timeline-role">IT Consultant</h3>
+            <h4 class="timeline-company">Oftasanin</h4>
+            <ul class="timeline-details">
+              <li>Led technology selection decisions, defining Neo4j as the core graph database engine.</li>
+              <li>Designed initial system architecture using FastAPI and Neo4j.</li>
+              <li>Implemented foundational backend structure and REST services.</li>
+              <li>Contributed to frontend architecture decisions using Next.js.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">FastAPI</span>
+              <span class="tag">Neo4j</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">05/2021 &mdash; 12/2023</span>
+              <span class="timeline-location">Canada (remote)</span>
+            </div>
+            <h3 class="timeline-role">Software Developer</h3>
+            <h4 class="timeline-company">Opes Software</h4>
+            <ul class="timeline-details">
+              <li>Developed React.js applications from scratch, delivering production-ready UI systems.</li>
+              <li>Maintained and modernized legacy frontend and Python backend systems.</li>
+              <li>Containerized legacy Python applications for reproducibility and maintainability.</li>
+              <li>Provisioned and deployed static applications using AWS CDK infrastructure as code.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">React.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">AWS CDK</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">08/2020 &mdash; 05/2021</span>
+              <span class="timeline-location">Panama (remote)</span>
+            </div>
+            <h3 class="timeline-role">Backend Developer</h3>
+            <h4 class="timeline-company">Grupo Ari</h4>
+            <ul class="timeline-details">
+              <li>Designed and built REST APIs from scratch using Django, DRF, and PostgreSQL.</li>
+              <li>Implemented asynchronous task processing with Celery.</li>
+              <li>Integrated multiple external data sources into backend services.</li>
+              <li>Performed code reviews and contributed to backend design decisions.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Django</span>
+              <span class="tag">DRF</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Celery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">10/2019 &mdash; 06/2020</span>
+              <span class="timeline-location">Colombia</span>
+            </div>
+            <h3 class="timeline-role">Backend Developer</h3>
+            <h4 class="timeline-company">Easy movil</h4>
+            <ul class="timeline-details">
+              <li>Developed REST APIs using Django and PostgreSQL.</li>
+              <li>Integrated payment processing services.</li>
+              <li>Designed database schemas and deployment workflows on Linux VPS.</li>
+              <li>Containerized applications using Docker.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Django</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Payments</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">01/2019 &mdash; 06/2019</span>
+              <span class="timeline-location">Colombia</span>
+            </div>
+            <h3 class="timeline-role">Fullstack Developer</h3>
+            <h4 class="timeline-company">IlanaLab</h4>
+            <ul class="timeline-details">
+              <li>Built REST APIs using Django and PostgreSQL.</li>
+              <li>Implemented background task processing with Celery.</li>
+              <li>Integrated payment services.</li>
+              <li>Developed frontend interfaces using Bootstrap, CSS, and jQuery.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Django</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Celery</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title" data-text="EDUCATION">
+        <span class="section-number">04.</span> EDUCATION
+      </h2>
+      <div class="education-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon">&#127891;</div>
+          <h3>Computer Systems Engineer</h3>
+          <h4>Universidad Tecnologica de Pereira</h4>
+          <span class="edu-date">2014 &mdash; 2018</span>
+          <span class="edu-location">Pereira, Colombia</span>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-icon">&#127760;</div>
+          <h3>English B2</h3>
+          <h4>Colombo Americano</h4>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Additional Experience</h3>
+      <div class="additional-grid">
+        <div class="additional-card reveal">
+          <span class="additional-year">2021</span>
+          <p>Math instructor at Universidad Tecnologica de Pereira</p>
+        </div>
+        <div class="additional-card reveal">
+          <span class="additional-year">2019</span>
+          <p>Guitarist at Pereira's string orchestra</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-text="CONTACT">
+        <span class="section-number">05.</span> CONTACT
+      </h2>
+      <div class="contact-grid">
+        <a href="mailto:ingjhonsanz@gmail.com" class="contact-card reveal">
+          <div class="contact-icon">&#9993;</div>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">ingjhonsanz@gmail.com</span>
+        </a>
+        <a href="tel:+573015270778" class="contact-card reveal">
+          <div class="contact-icon">&#9742;</div>
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+57 3015270778</span>
+        </a>
+        <a href="https://github.com/ingjhonsanz" target="_blank" rel="noopener" class="contact-card reveal">
+          <div class="contact-icon">&#128187;</div>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/ingjhonsanz</span>
+        </a>
+        <a href="https://linkedin.com/in/ingjhonsanz" target="_blank" rel="noopener" class="contact-card reveal">
+          <div class="contact-icon">&#128101;</div>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/ingjhonsanz</span>
+        </a>
+        <a href="https://youtube.com/@ingjhonsanz" target="_blank" rel="noopener" class="contact-card reveal">
+          <div class="contact-icon">&#9654;</div>
+          <span class="contact-label">YouTube</span>
+          <span class="contact-value">YouTube Channel</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <p class="footer-text">
+        <span class="footer-brackets">&lt;</span>
+        Designed & Built by Jhon Edwin Sanz Gonzalez
+        <span class="footer-brackets">/&gt;</span>
+      </p>
+      <p class="footer-year">2026</p>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
