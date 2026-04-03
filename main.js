@@ -19,41 +19,40 @@ function initPretextHero() {
   ];
 
   let currentPhrase = 0;
-  let animFrame = null;
+  let cssWidth = 0;
+  let cssHeight = 0;
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.scale(dpr, dpr);
+    cssWidth = rect.width;
+    cssHeight = rect.height;
+    canvas.width = cssWidth * dpr;
+    canvas.height = cssHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
+  const font = '16px "Share Tech Mono", monospace';
+  const lineHeight = 22;
+  const textY = 30; // vertical center for single-line text
+
   function renderPretextLine() {
-    const rect = canvas.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const font = '16px "Share Tech Mono", monospace';
-    const lineHeight = 22;
-
-    ctx.clearRect(0, 0, width, height);
-
+    ctx.clearRect(0, 0, cssWidth, cssHeight);
     const text = phrases[currentPhrase];
 
     try {
       const prepared = prepareWithSegments(text, font);
-      const result = layoutWithLines(prepared, width - 20, lineHeight);
+      const result = layoutWithLines(prepared, cssWidth - 20, lineHeight);
 
-      // Draw each line with neon glow
       result.lines.forEach((line, i) => {
-        const y = 20 + i * lineHeight;
+        const y = textY + i * lineHeight;
         const lineText = text.substring(line.start, line.end);
 
-        // Glow effect
-        ctx.shadowColor = '#00f0ff';
-        ctx.shadowBlur = 8;
-        ctx.fillStyle = '#00f0ff';
+        // Glow layer
         ctx.font = font;
-        ctx.globalAlpha = 0.3;
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 10;
+        ctx.globalAlpha = 0.35;
+        ctx.fillStyle = '#00f0ff';
         ctx.fillText(lineText, 10, y);
 
         // Main text
@@ -65,33 +64,29 @@ function initPretextHero() {
         ctx.shadowBlur = 0;
       });
     } catch (e) {
-      // Fallback: render directly if pretext fails
+      // Fallback: render directly
+      ctx.font = font;
       ctx.shadowColor = '#00f0ff';
-      ctx.shadowBlur = 8;
+      ctx.shadowBlur = 10;
+      ctx.globalAlpha = 0.35;
       ctx.fillStyle = '#00f0ff';
-      ctx.font = '16px "Share Tech Mono", monospace';
-      ctx.globalAlpha = 0.3;
-      ctx.fillText(text, 10, 20);
+      ctx.fillText(text, 10, textY);
       ctx.globalAlpha = 1;
       ctx.shadowBlur = 4;
       ctx.fillStyle = '#e0e0e8';
-      ctx.fillText(text, 10, 20);
+      ctx.fillText(text, 10, textY);
       ctx.shadowBlur = 0;
     }
   }
 
-  // Scramble/decode animation
   function scrambleTransition() {
     const text = phrases[currentPhrase];
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*<>{}[]';
-    const rect = canvas.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const font = '16px "Share Tech Mono", monospace';
     let revealed = 0;
 
     function frame() {
-      ctx.clearRect(0, 0, width, height);
+      ctx.clearRect(0, 0, cssWidth, cssHeight);
+      ctx.font = font;
 
       let display = '';
       for (let i = 0; i < text.length; i++) {
@@ -104,13 +99,12 @@ function initPretextHero() {
 
       // Glow layer
       ctx.shadowColor = '#00f0ff';
-      ctx.shadowBlur = 6;
+      ctx.shadowBlur = 8;
+      ctx.globalAlpha = 0.2;
       ctx.fillStyle = '#00f0ff';
-      ctx.font = font;
-      ctx.globalAlpha = 0.25;
-      ctx.fillText(display, 10, 20);
+      ctx.fillText(display, 10, textY);
 
-      // Main text
+      // Per-character coloring
       ctx.globalAlpha = 1;
       ctx.shadowBlur = 3;
 
@@ -121,14 +115,14 @@ function initPretextHero() {
         } else {
           ctx.fillStyle = `hsl(${180 + Math.random() * 60}, 100%, 60%)`;
         }
-        ctx.fillText(display[i], x, 20);
+        ctx.fillText(display[i], x, textY);
       }
 
       ctx.shadowBlur = 0;
       revealed += 1;
 
       if (revealed <= text.length) {
-        animFrame = requestAnimationFrame(frame);
+        requestAnimationFrame(frame);
       } else {
         renderPretextLine();
         setTimeout(() => {
@@ -308,7 +302,6 @@ function initMobileNav() {
 
   toggle.addEventListener('click', () => {
     links.classList.toggle('open');
-    const spans = toggle.querySelectorAll('span');
     toggle.classList.toggle('active');
   });
 
@@ -324,16 +317,13 @@ function initMobileNav() {
 // ============================================
 function initNavScroll() {
   const nav = document.querySelector('.cyber-nav');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
-    const current = window.scrollY;
-    if (current > 100) {
+    if (window.scrollY > 100) {
       nav.style.background = 'rgba(10, 10, 15, 0.95)';
     } else {
       nav.style.background = 'rgba(10, 10, 15, 0.85)';
     }
-    lastScroll = current;
   });
 }
 
