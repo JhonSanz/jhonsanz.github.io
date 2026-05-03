@@ -546,6 +546,10 @@ body {
   border-color: rgba(57, 255, 20, 0.4);
 }
 
+.project-card + .project-card {
+  margin-top: 1.5rem;
+}
+
 .project-card-glow {
   position: absolute;
   top: -50%; right: -20%;
@@ -701,6 +705,90 @@ body {
   .project-badge { align-self: flex-start; }
   .project-actions { flex-direction: column; }
   .project-link { justify-content: center; }
+}
+
+/* ============================================
+   TEACHING CARD (magenta variant)
+   ============================================ */
+.teaching-card {
+  border-left-color: var(--neon-magenta);
+}
+
+.teaching-card::before {
+  background: linear-gradient(90deg, var(--neon-magenta), var(--neon-purple), var(--neon-cyan));
+  box-shadow: 0 0 12px rgba(255, 0, 229, 0.4);
+}
+
+.teaching-card:hover {
+  border-color: rgba(255, 0, 229, 0.4);
+}
+
+.teaching-glow {
+  background: radial-gradient(circle, rgba(255, 0, 229, 0.1), transparent 60%);
+}
+
+.dot-magenta {
+  background: var(--neon-magenta);
+  box-shadow: 0 0 8px var(--neon-magenta);
+}
+
+.status-magenta {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 8px rgba(255, 0, 229, 0.4);
+}
+
+.text-magenta {
+  color: var(--neon-magenta);
+  font-weight: 600;
+}
+
+.badge-magenta {
+  background: rgba(255, 0, 229, 0.05);
+  border-color: rgba(255, 0, 229, 0.3);
+}
+
+.badge-magenta .project-badge-value {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 8px rgba(255, 0, 229, 0.3);
+}
+
+.teaching-pitch {
+  position: relative;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 0, 229, 0.04);
+  border-left: 2px solid var(--neon-magenta);
+}
+
+.pitch-quote {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+}
+
+.features-magenta li::before {
+  color: var(--neon-magenta);
+}
+
+.tag-magenta {
+  background: rgba(255, 0, 229, 0.08);
+  border-color: rgba(255, 0, 229, 0.3);
+  color: var(--neon-magenta);
+}
+
+.link-magenta {
+  color: var(--neon-magenta);
+  background: rgba(255, 0, 229, 0.05);
+  border-color: rgba(255, 0, 229, 0.3);
+}
+
+.link-magenta:hover {
+  color: var(--dark-bg);
+  background: var(--neon-magenta);
+  box-shadow: 0 0 18px rgba(255, 0, 229, 0.5);
 }
 
 /* ============================================
@@ -1060,4 +1148,137 @@ body {
   .cyber-nav { padding: 0.8rem 1rem; }
   .hero-title { letter-spacing: 3px; }
   .timeline-content { padding: 1.2rem; }
+}
+
+/* ============================================
+   COMPACT SECTION VARIANT
+   (applied to: Profile, Skills, Education)
+   ============================================ */
+.section-compact {
+  padding: 3.5rem 0;
+}
+
+.section-compact .section-title {
+  margin-bottom: 1.8rem;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+}
+
+/* Profile / About */
+.section-compact .about-grid {
+  gap: 2rem;
+}
+
+.section-compact .cyber-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.section-compact .about-stats {
+  gap: 0.8rem;
+}
+
+.section-compact .stat-card {
+  padding: 1rem 1.2rem;
+}
+
+.section-compact .stat-number {
+  font-size: 1.9rem;
+}
+
+.section-compact .stat-plus {
+  font-size: 1.5rem;
+}
+
+.section-compact .stat-label {
+  font-size: 0.7rem;
+  margin-top: 0.2rem;
+}
+
+/* Skills */
+.section-compact .skills-grid {
+  gap: 1rem;
+}
+
+.section-compact .skill-card {
+  padding: 1.2rem 1.3rem;
+}
+
+.section-compact .skill-card-header {
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.section-compact .skill-icon {
+  font-size: 1.2rem;
+}
+
+.section-compact .skill-card h3 {
+  font-size: 0.85rem;
+}
+
+.section-compact .skill-tags {
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-compact .skill-tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+}
+
+/* Education */
+.section-compact .education-grid {
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-compact .edu-card {
+  padding: 1.3rem 1.4rem;
+}
+
+.section-compact .edu-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-compact .edu-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.section-compact .edu-card h4 {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-compact .edu-date,
+.section-compact .edu-location {
+  font-size: 0.75rem;
+}
+
+.section-compact .subsection-title {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.section-compact .additional-grid {
+  gap: 0.7rem;
+}
+
+.section-compact .additional-card {
+  padding: 0.9rem 1.2rem;
+  gap: 1rem;
+}
+
+.section-compact .additional-year {
+  font-size: 1rem;
+}
+
+.section-compact .additional-card p {
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .section-compact { padding: 2.5rem 0; }
 }
